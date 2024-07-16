@@ -1,16 +1,13 @@
 import './App.css'
-import './routePag/routes.jsx'
-import Route from 'react-router-dom'
+import Login from './components/login/Login.jsx'
+// import './routePag/routes.jsx'
 
 
 function App() {
-
-
   return (
-    <>
-    <Route path="/exact"></Route>
-  {/* <Routes/> */}
-    </>
+<div className="App">
+  <Login />
+</div>
   )
 }
 
