@@ -1,12 +1,28 @@
 .pag1 {
-
+  display: flex;
+  place-items: center;
+  min-height: 100vh;
+  justify-content: space-around;
 }
 
-.Login {
+.imageLogin {
+  display: flex;
+  justify-content: center;
+  padding-right: 100px;
+}
+.login{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 700px;
+  width: 600px;
+  background-color: rgba(255, 255, 255, 0.26);
+  border-radius: 2%;
+  backdrop-filter: blur(4px);
+}
+.google-login-button  {
+  background-color: rgba(255, 255, 255, 0);
   border: none;
-  background: none;
-  cursor: pointer;
 }
-#logologin {
-  width: 100px;
+.google-login-button #google {
 }
