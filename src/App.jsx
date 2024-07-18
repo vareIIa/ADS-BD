@@ -1,12 +1,11 @@
 import './App.css'
-import Login from './components/login/Login.jsx'
-// import './routePag/routes.jsx'
+import PaginaLogin from './pages/pagLogin.jsx';
 
 
 function App() {
   return (
 <div className="App">
-  <Login />
+  <PaginaLogin />
 </div>
   )
 }

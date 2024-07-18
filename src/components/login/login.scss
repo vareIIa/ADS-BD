@@ -8,14 +8,15 @@
 .imageLogin {
   display: flex;
   justify-content: center;
-  padding-right: 100px;
 }
 .login{
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   height: 700px;
-  width: 600px;
+  width: 500px;
+  color: rgb(255, 255, 255);
   background-color: rgba(255, 255, 255, 0.26);
   border-radius: 2%;
   backdrop-filter: blur(4px);
@@ -24,5 +25,25 @@
   background-color: rgba(255, 255, 255, 0);
   border: none;
 }
-.google-login-button #google {
+
+@media screen and (max-width: 1122px) {
+  .pag1 {
+    display: flex;
+    flex-direction:column;
+    min-height: 100vh;
+    justify-content: center;
+    background-color: black;
+  }
+  
+  .imageLogin {
+    height: 100px;
+  }
+  
+  .login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: none;
+  }
 }
