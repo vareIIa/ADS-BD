@@ -11,7 +11,7 @@
 }
 @media screen and (max-width: 1122px) {
   :root {
-    background: white;
+    background: rgb(113, 117, 168);
   }
 }
 body::-webkit-scrollbar {

@@ -47,3 +47,8 @@
     background: none;
   }
 }
+@media screen and (max-height: 728px) {
+  .login {
+    height: 500px;
+  }
+}
