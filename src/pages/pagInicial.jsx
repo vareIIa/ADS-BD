@@ -1,6 +1,7 @@
 import { Box, Grid } from "@mui/material";
 import CardProfile from "../components/cardProfile/cardProfile";
 import CardTaskBoard from "../components/cardTaskBoard/cardTaskBoard";
+import HomeNavegation from "../components/homeNav/homeNav";
 
 const PaginaInicial = () => {
   return (
@@ -11,7 +12,7 @@ const PaginaInicial = () => {
         </Grid>
 
         <Grid item xs={8}>
-          <h1>Meio</h1>
+          <HomeNavegation />
         </Grid>
 
         <Grid item xs>
