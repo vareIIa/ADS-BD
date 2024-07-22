@@ -2,17 +2,34 @@ import React, { useState } from 'react';
 import './criarPerfil.scss';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
-import FormHelperText from '@mui/material/FormHelperText';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import data from './data';
+import data from './data.js';
 
-function CriarPerfil({ nomeUsuario }) {
+function CriarPerfil() {
+  const [file, setFile] = useState(null);
+  const [profileImageUrl, setProfileImageUrl] = useState('');
+  const [message, setMessage] = useState('');
+  const [nomeUsuario, setNomeUsuario] = useState('');
   const [cargo, setCargo] = useState('');
   const [dataNascimento, setDataNascimento] = useState('');
-  
+
+  const onFileChange = (e) => {
+    const selectedFile = e.target.files[0];
+    setFile(selectedFile);
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      setProfileImageUrl(reader.result);
+    };
+    reader.readAsDataURL(selectedFile);
+  };
+
+  const handleNomeChange = (event) => {
+    setNomeUsuario(event.target.value);
+  };
+
   const handleCargoChange = (event) => {
     setCargo(event.target.value);
   };
@@ -26,7 +43,7 @@ function CriarPerfil({ nomeUsuario }) {
       name: nomeUsuario,
       cargo: cargo,
       age: dataNascimento,
-      profileImage: 'kcscs' // Pode ser ajustado conforme necessário
+      profileImage: profileImageUrl
     };
     data.push(novoPerfil);
     console.log('Perfil criado:', novoPerfil);
@@ -35,57 +52,64 @@ function CriarPerfil({ nomeUsuario }) {
   return (
     <div className="quadradoRegistro">
       <h2>Criar Perfil</h2>
-      <div>
-      <FormControl required sx={{ m: 1, minWidth: 120 }}>
-        <TextField
-          label="Nome"
-          value={nomeUsuario}
-          InputProps={{
-            readOnly: true,
-          }}
-        />
-      </FormControl>
+      <div className='fileProfile'>
+        <label id='estilizarImg' for='perfil'></label>
+        <input type="file" id='perfil' name='perfil' onChange={onFileChange} />
+        {profileImageUrl && (
+          <div>
+            <img src={profileImageUrl} alt="Profile" width="100" />
+          </div>
+        )}
+        {message && <p>{message}</p>}
       </div>
       <div>
-      <FormControl required sx={{ m: 1, minWidth: 120 }}>
-        <InputLabel id="cargo-label">Cargo</InputLabel>
-        <Select
-          labelId="cargo-label"
-          id="cargo-select"
-          value={cargo}
-          label="Cargo *"
-          onChange={handleCargoChange}
-        >
-          <MenuItem value="">
-            <em>None</em>
-          </MenuItem>
-          <MenuItem value="Estagiária">Estagiária</MenuItem>
-          <MenuItem value="Desenvolvedora Junior">Desenvolvedora Junior</MenuItem>
-          <MenuItem value="Desenvolvedora Pleno">Desenvolvedora Pleno</MenuItem>
-          <MenuItem value="Desenvolvedora Senior">Desenvolvedora Senior</MenuItem>
-        </Select>
-        <FormHelperText>Required</FormHelperText>
-      </FormControl>
+        <FormControl required sx={{ m: 1, minWidth: 120 }}>
+          <TextField
+            label="Nome"
+            id="string"
+            value={nomeUsuario}
+            onChange={handleNomeChange}
+          />
+        </FormControl>
       </div>
       <div>
-      <FormControl required sx={{ m: 1, minWidth: 120 }}>
-        <TextField
-          id="data-nascimento"
-          label="Data de Nascimento"
-          type="date"
-          value={dataNascimento}
-          onChange={handleDataNascimentoChange}
-          InputLabelProps={{
-            shrink: true,
-          }}
-        />
-        <FormHelperText>Obrigatorio</FormHelperText>
-      </FormControl>
+        <FormControl required sx={{ m: 2, minWidth: 223 }}>
+          <InputLabel id="cargo-label">Cargo</InputLabel>
+          <Select
+            labelId="cargo-label"
+            id="cargo-select"
+            value={cargo}
+            label="Cargo"
+            onChange={handleCargoChange}
+          >
+            <MenuItem value="">
+              <em>Selecione</em>
+            </MenuItem>
+            <MenuItem value="Estagiário">Estagiário(a) Psicologia</MenuItem>
+            <MenuItem value="Estagiário">Estagiário(a) Programação</MenuItem>
+            <MenuItem value="Desenvolvedora Junior">Desenvolvedor Fullstack</MenuItem>
+            <MenuItem value="Desenvolvedora Pleno">Líder d'''e Atendimento</MenuItem>
+          </Select>
+        </FormControl>
       </div>
       <div>
-      <Button variant="contained" color="primary" onClick={handleSubmit}>
-        Avançar
-      </Button>
+        <FormControl required sx={{ m: 2, minWidth: 223 }}>
+          <TextField
+            id="data-nascimento"
+            label="Data de Nascimento"
+            type="date"
+            value={dataNascimento}
+            onChange={handleDataNascimentoChange}
+            InputLabelProps={{
+              shrink: true,
+            }}
+          />
+        </FormControl>
+      </div>
+      <div>
+        <Button id='botaoAvancar' variant="contained" color="primary" onClick={handleSubmit}>
+          Avançar
+        </Button>
       </div>
     </div>
   );
