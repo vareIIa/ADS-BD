@@ -57,12 +57,19 @@ const HomeNavegation = () => {
             centered
             sx={{
               "& .MuiTab-root": {
+                fontSize: "24px",
                 fontWeight: 700,
                 color: "#292929",
               },
+
               "& .Mui-selected": {
                 color: "#292929",
               },
+
+              "& .css-1h9z7r5-MuiButtonBase-root-MuiTab-root.Mui-selected": {
+                color: "#292929",
+              },
+
               "& .MuiTabs-indicator": {
                 backgroundColor: "#292929",
               },
