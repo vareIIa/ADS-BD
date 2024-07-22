@@ -1,6 +1,7 @@
 import { Box, Paper, Tab, Tabs } from "@mui/material";
 import { useState } from "react";
 
+
 const HomeNavegation = () => {
   const [tabValue, setTabValue] = useState(0);
 
@@ -35,7 +36,7 @@ const HomeNavegation = () => {
       <img
         width={"100px"}
         height={"100px"}
-        src="src/assets/pd-icon.png"
+        src="src/assets/icons/pd-icon.png"
         alt="Ícone do Projeto Desenvolve"
       />
 
@@ -57,8 +58,9 @@ const HomeNavegation = () => {
             centered
             sx={{
               "& .MuiTab-root": {
+                fontFamily: "Raleway, sans-serif",
                 fontSize: "24px",
-                fontWeight: 700,
+                fontWeight: "bold",
                 color: "#292929",
               },
 
