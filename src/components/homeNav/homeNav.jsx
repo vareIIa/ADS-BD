@@ -1,6 +1,29 @@
 import { Box, Paper, Tab, Tabs } from "@mui/material";
+import { useState } from "react";
 
 const HomeNavegation = () => {
+  const [tabValue, setTabValue] = useState(0);
+
+  const handleTabChange = (_event, newValue) => {
+    setTabValue(newValue);
+  };
+
+  const renderComponent = (tabValue) => {
+    switch (tabValue) {
+      case 0:
+        return <h1>Agenda</h1>;
+
+      case 1:
+        return <h1>Social</h1>;
+
+      case 2:
+        return <h1>Tarefas</h1>;
+
+      case 3:
+        return <h1>Ferramentas</h1>;
+    }
+  };
+
   return (
     <Box
       display={"flex"}
@@ -14,7 +37,7 @@ const HomeNavegation = () => {
         height={"100px"}
         src="src/assets/pd-icon.png"
         alt="Ícone do Projeto Desenvolve"
-      ></img>
+      />
 
       <Paper
         elevation={3}
@@ -27,12 +50,32 @@ const HomeNavegation = () => {
           height: "80vh",
         }}
       >
-        <Tabs value={"1"} onChange={() => console.log("Opa")} centered>
-          <Tab label="Agenda"></Tab>
-          <Tab label="Social"></Tab>
-          <Tab label="Tarefas"></Tab>
-          <Tab label="Ferramentas"></Tab>
-        </Tabs>
+        <Box>
+          <Tabs
+            value={tabValue}
+            onChange={handleTabChange}
+            centered
+            sx={{
+              "& .MuiTab-root": {
+                fontWeight: 700,
+                color: "#292929",
+              },
+              "& .Mui-selected": {
+                color: "#292929",
+              },
+              "& .MuiTabs-indicator": {
+                backgroundColor: "#292929",
+              },
+            }}
+          >
+            <Tab label="Agenda" />
+            <Tab label="Social" />
+            <Tab label="Tarefas" />
+            <Tab label="Ferramentas" />
+          </Tabs>
+        </Box>
+
+        <Box>{renderComponent(tabValue)}</Box>
       </Paper>
     </Box>
   );
