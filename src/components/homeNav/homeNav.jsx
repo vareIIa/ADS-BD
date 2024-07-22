@@ -1,6 +1,6 @@
 import { Box, Paper, Tab, Tabs } from "@mui/material";
 import { useState } from "react";
-
+import CardSocialFeedback from "../cardSocialFeedback/cardSocialFeedback";
 
 const HomeNavegation = () => {
   const [tabValue, setTabValue] = useState(0);
@@ -15,7 +15,7 @@ const HomeNavegation = () => {
         return <h1>Agenda</h1>;
 
       case 1:
-        return <h1>Social</h1>;
+        return <CardSocialFeedback />;
 
       case 2:
         return <h1>Tarefas</h1>;
