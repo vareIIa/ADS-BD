@@ -53,13 +53,16 @@ function CriarPerfil() {
     <div className="quadradoRegistro">
       <h2>Criar Perfil</h2>
       <div className='fileProfile'>
-        <label id='estilizarImg' for='perfil'></label>
+      <label
+        id='estilizarImg'
+        htmlFor='perfil'
+        style={{
+          backgroundImage: `url(${profileImageUrl})`,
+        }}
+      >
+        {!profileImageUrl && 'Upload'}
+      </label>
         <input type="file" id='perfil' name='perfil' onChange={onFileChange} />
-        {profileImageUrl && (
-          <div>
-            <img src={profileImageUrl} alt="Profile" width="100" />
-          </div>
-        )}
         {message && <p>{message}</p>}
       </div>
       <div>
@@ -85,10 +88,10 @@ function CriarPerfil() {
             <MenuItem value="">
               <em>Selecione</em>
             </MenuItem>
-            <MenuItem value="Estagiário">Estagiário(a) Psicologia</MenuItem>
-            <MenuItem value="Estagiário">Estagiário(a) Programação</MenuItem>
-            <MenuItem value="Desenvolvedora Junior">Desenvolvedor Fullstack</MenuItem>
-            <MenuItem value="Desenvolvedora Pleno">Líder d'''e Atendimento</MenuItem>
+            <MenuItem value="Estagiário(a) Psicologia">Estagiário(a) Psicologia</MenuItem>
+            <MenuItem value="Estagiário(a) Programação">Estagiário(a) Programação</MenuItem>
+            <MenuItem value="Desenvolvedor Fullstack">Desenvolvedor Fullstack</MenuItem>
+            <MenuItem value="Líder de Atendimento">Líder de Atendimento</MenuItem>
           </Select>
         </FormControl>
       </div>
