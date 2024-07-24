@@ -9,7 +9,7 @@ const CardSocial = () => {
   ];
 
   return (
-    <Box marginTop={7}>
+    <Box>
       {messages.map((message) => (
         <SocialNotification message={message} />
       ))}

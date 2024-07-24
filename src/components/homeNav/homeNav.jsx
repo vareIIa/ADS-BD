@@ -49,7 +49,7 @@ const HomeNavegation = () => {
           height: "80vh",
         }}
       >
-        <Box>
+        <Box marginBottom={3}>
           <Tabs
             value={tabValue}
             onChange={handleTabChange}
@@ -82,7 +82,9 @@ const HomeNavegation = () => {
           </Tabs>
         </Box>
 
-        <Box>{renderComponent(tabValue)}</Box>
+        <Box maxHeight={"80%"} overflow={"auto"}>
+          {renderComponent(tabValue)}
+        </Box>
       </Paper>
     </Box>
   );
