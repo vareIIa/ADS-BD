@@ -5,9 +5,9 @@ import HomeNavegation from "../components/homeNav/homeNav";
 
 const PaginaInicial = () => {
   return (
-    <Box marginX={3} marginY={5}>
-      <Grid container spacing={2} direction={"row"}>
-        <Grid item xs>
+    <Box marginX={2} marginY={4}>
+      <Grid container spacing={5} direction={"row"}>
+        <Grid item xs={2}>
           <CardProfile />
         </Grid>
 
@@ -15,7 +15,7 @@ const PaginaInicial = () => {
           <HomeNavegation />
         </Grid>
 
-        <Grid item xs>
+        <Grid item xs={2}>
           <CardTaskBoard />
         </Grid>
       </Grid>

@@ -1,7 +1,7 @@
 import { Avatar, Box, Divider, Paper, Typography } from "@mui/material";
 import CardFeedback from "../cardFeedback/cardFeedback";
 
-const CardProfile = (agenteSucesso) => {
+const CardProfile = () => {
   const flexStyle = {
     display: "flex",
     flexDirection: "column",
@@ -25,13 +25,13 @@ const CardProfile = (agenteSucesso) => {
             src=""
             alt="Foto de Perfil do Agente"
             variant="rounded"
-            sx={{ width: "250px", height: "250px" }}
+            sx={{ width: "150px", height: "150px" }}
           />
 
           <Typography
             variant="h3"
             fontFamily={"Raleway, sans-serif"}
-            fontSize={"64px"}
+            fontSize={"40px"}
             fontWeight={"bold"}
             color={"white"}
           >
@@ -41,7 +41,7 @@ const CardProfile = (agenteSucesso) => {
           <Typography
             variant="h5"
             fontFamily={"Raleway, sans-serif"}
-            fontSize={"24px"}
+            fontSize={"16px"}
             fontWeight={"bold"}
             color={"white"}
           >
@@ -56,7 +56,7 @@ const CardProfile = (agenteSucesso) => {
 
         <Box width={"100%"}>
           <Divider
-            variant="middle"
+            variant="fullWidth"
             sx={{
               height: "3px",
               backgroundColor: "white",
@@ -71,7 +71,7 @@ const CardProfile = (agenteSucesso) => {
             variant="h3"
             textAlign={"center"}
             fontFamily={"Raleway, sans-serif"}
-            fontSize={"40px"}
+            fontSize={"32px"}
             fontWeight={"bold"}
             color={"white"}
           >
