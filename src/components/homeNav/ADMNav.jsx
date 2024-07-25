@@ -55,20 +55,20 @@ const HomeNavegation = () => {
             },
           }}
         >
-          <List sx={{ marginTop: 10 }}>
-            <ListItem button>
-              <AppsIcon sx={{ margin: 1 }} /> <ListItemText primary="Gerenciar tarefas" />
-            </ListItem>
-            <ListItem button>
-              <PermIdentityIcon sx={{ margin: 1 }} /> <ListItemText primary="Pessoas" />
-            </ListItem>
-            <ListItem button>
-              <CalendarMonthIcon sx={{ margin: 1 }} /> <ListItemText primary="Eventos" />
-            </ListItem>
-            <ListItem button>
-              <StorefrontIcon sx={{ margin: 1 }} /><ListItemText primary="Loja de prêmios" />
-            </ListItem>
-          </List>
+           <List>
+          <ListItem button onClick={() => handleItemClick('gerenciarTarefas')}>
+            <AppsIcon sx={{ margin: 1 }} /> <ListItemText primary="Gerenciar tarefas" />
+          </ListItem>
+          <ListItem button onClick={() => handleItemClick('pessoas')}>
+            <PermIdentityIcon sx={{ margin: 1 }} /> <ListItemText primary="Pessoas" />
+          </ListItem>
+          <ListItem button onClick={() => handleItemClick('eventos')}>
+            <CalendarMonthIcon sx={{ margin: 1 }} /> <ListItemText primary="Eventos" />
+          </ListItem>
+          <ListItem button onClick={() => handleItemClick('lojaDePremios')}>
+            <StorefrontIcon sx={{ margin: 1 }} /><ListItemText primary="Loja de prêmios" />
+          </ListItem>
+        </List>
         </Drawer>
 
         <Box component="main" sx={{ padding: 5 }}>
