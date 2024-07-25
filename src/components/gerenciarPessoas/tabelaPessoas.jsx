@@ -11,18 +11,26 @@ import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import { Typography } from '@mui/material';
 import { Padding } from '@mui/icons-material';
+import Button from '@mui/material/Button';
+import IconHori from '@mui/icons-material/MoreHoriz';
 
-function createData(nome, CARGO, NASCIMENTO, INICIO, SKILLS) {
-  return { nome, CARGO, NASCIMENTO, INICIO, SKILLS};
+function createData(nome, CARGO, NASCIMENTO, INICIO, SKILLS, OPTIONS) {
+  return { nome, CARGO, NASCIMENTO, INICIO, SKILLS, OPTIONS};
 }
 
 const rows = [
-  createData('Alexandre Gonçalves Dias', 'Desenvolvedor Junior', '01/01/1999', '01/01/1999', 2),
-  createData('Alisson Vinicius Ferreira Goncalves', 'Desenvolvedor Junior','01/01/1999', '01/01/1999', 2),
-  createData('Ana Laura Dos Santos Franco', 'Desenvolvedor Junior', '01/01/1999', '01/01/1999', 1),
-  createData('Anna Rita Tomich Magalhães Felippe', 'Desenvolvedor Junior', '01/01/1999', '01/01/1999', 1),
-  createData('Arthur Breno Silva Rosa', 'Desenvolvedor Junior', '01/01/1999', '01/01/1999', 0),
-  createData('Artur Henrique Almeida Magalhaes', 'Desenvolvedor Junior', '01/01/1999', '01/01/1999', 1.5),
+  createData('Alexandre Gonçalves Dias', 'Desenvolvedor Junior', '01/01/1999', '01/01/1999', <Button contained sx={{borderRadius: '30px', backgroundColor: 'ORANGE'}}>  JS</Button>, <IconHori/>),
+  createData('Alisson Vinicius Ferreira Goncalves', 'Desenvolvedor Junior','01/01/1999', '01/01/1999', <Button contained sx={{borderRadius: '30px', backgroundColor: 'yellow'}}>  Java</Button>,<IconHori/>),
+  createData('Ana Laura Dos Santos Franco', 'Desenvolvedor Junior', '01/01/1999', '01/01/1999', <Button contained sx={{borderRadius: '30px', backgroundColor: 'RED'}}>  RUBY</Button>, <IconHori/> ),
+  createData('Anna Rita Tomich Magalhães Felippe', 'Desenvolvedor Junior', '01/01/1999', '01/01/1999', <Button contained sx={{borderRadius: '30px', backgroundColor: 'yellow'}}>  Java</Button>, <IconHori/>),
+  createData('Arthur Breno Silva Rosa', 'Desenvolvedor Junior', '01/01/1999', '01/01/1999', <Button contained sx={{borderRadius: '30px', backgroundColor: 'yellow'}}>  Java</Button>, <IconHori/>),
+  createData('Artur Henrique Almeida Magalhaes', 'Desenvolvedor Junior', '01/01/1999', '01/01/1999', <Button contained sx={{borderRadius: '30px', backgroundColor: 'yellow'}}>  Java</Button>, <IconHori/>),
+  createData('Arthur Breno Silva Rosa', 'Desenvolvedor Junior', '01/01/1999', '01/01/1999', <Button contained sx={{borderRadius: '30px', backgroundColor: 'yellow'}}>  Java</Button>, <IconHori/>),
+  createData('Artur Henrique Almeida Magalhaes', 'Desenvolvedor Junior', '01/01/1999', '01/01/1999', <Button contained sx={{borderRadius: '30px', backgroundColor: 'yellow'}}>  Java</Button>, <IconHori/>),
+  createData('Arthur Breno Silva Rosa', 'Desenvolvedor Junior', '01/01/1999', '01/01/1999', <Button contained sx={{borderRadius: '30px', backgroundColor: 'blue'}}>  PHP</Button>, <IconHori/>),
+  createData('Artur Henrique Almeida Magalhaes', 'Desenvolvedor Junior', '01/01/1999', '01/01/1999', <Button contained sx={{borderRadius: '30px', backgroundColor: 'yellow'}}>  Java</Button>, <IconHori/>),
+  createData('Arthur Breno Silva Rosa', 'Desenvolvedor Junior', '01/01/1999', '01/01/1999', <Button contained sx={{borderRadius: '30px', backgroundColor: 'yellow'}}>  Java</Button>,<IconHori/>),
+  createData('Artur Henrique Almeida Magalhaes', 'Desenvolvedor Junior', '01/01/1999', '01/01/1999', <Button contained sx={{borderRadius: '30px', backgroundColor: 'yellow'}}>  Java</Button>,<IconHori/>),
 
   ``
 ];
@@ -37,17 +45,17 @@ export default function App() {
 
   return (
   
-    <Box sx={{display: ''}}>
-    <Paper elevation={5} sx={{maxWidth: '65vw', marginBottom: 5}}>
+    <Box sx={{position: 'relative', top: -20}}>
+    <Paper elevation={5} sx={{maxWidth: 'auto', marginBottom: 5, maxHeight: '15vh'}}>
       <Box style={{
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
-        padding: '20px',
+        
         gap: '40px',
         
       }}>
-        <Typography><strong>Lista de Usuários</strong></Typography>
+        <Typography sx={{marginLeft: 3, fontSize: 13}}><strong>Lista de Usuários</strong></Typography>
         <TextField
           label="Buscar..."
           variant="outlined"
@@ -60,7 +68,7 @@ export default function App() {
       </Paper>
 
 
-      <TableContainer style={{ maxHeight: 300, overflow: 'auto', overflowX: 'auto' }}>
+      <TableContainer style={{ maxHeight: '50vh', overflow: 'auto', overflowX: 'auto' }}>
         <Table stickyHeader aria-label="sticky table" style={{ minWidth: '65vw', maxWidth: 'auto' }}>
           <TableHead>
             <TableRow>
@@ -85,7 +93,8 @@ export default function App() {
                 <TableCell align="center">{row.CARGO}</TableCell>
                 <TableCell align="center">{row.NASCIMENTO}</TableCell>
                 <TableCell align="center">{row.INICIO}</TableCell>
-
+                <TableCell align="center">{row.SKILLS}</TableCell>
+                <TableCell align="center">{row.OPTIONS}</TableCell>
               </TableRow>
             ))}
           </TableBody>

@@ -7,6 +7,7 @@ import StorefrontIcon from '@mui/icons-material/Storefront';
 import AddIcon from '@mui/icons-material/Add';
 import Fab from '@mui/material/Fab';
 import Typography from '@mui/material/Typography';
+import HoriIcon from '@mui/icons-material/MoreHoriz';
 
 const GerenciarTarefas = () => {
 
@@ -17,9 +18,9 @@ const GerenciarTarefas = () => {
 
 
 
-<Box component="main" sx={{ padding: 1, marginLeft: 5 }}>
+<Box component="main" sx={{ padding: 1 }}>
 <Box sx={{ display: 'flex', flexDirection: 'row' }}>
-  <Card elevation={3} sx={{ width: "20vw", height: "65vh", marginLeft: 5, position: 'relative' }}>
+  <Card elevation={3} sx={{ width: "20vw", height: "65vh", marginLeft: 2, position: 'relative' }}>
 
     <Box sx={{ display: 'flex', alignItems: 'center'}}>
       
@@ -28,7 +29,7 @@ const GerenciarTarefas = () => {
         title="Tarefas Gerais"
         titleTypographyProps={{ variant: 'h6', fontSize: '0.875rem' }}
       />
-
+      <HoriIcon/>
       <Fab
         sx={{
           position: 'absolute',
@@ -77,7 +78,7 @@ const GerenciarTarefas = () => {
         title="Tarefas Individuais"
         titleTypographyProps={{ variant: 'h6', fontSize: '0.875rem' }}
       />
-
+<HoriIcon/>
       <Fab
         sx={{
           position: 'absolute',
@@ -135,7 +136,7 @@ const GerenciarTarefas = () => {
         title="Histórico Semanal"
         titleTypographyProps={{ variant: 'h6', fontSize: '0.875rem' }}
       />
-
+<HoriIcon/>
       <Fab
         sx={{
           position: 'absolute',

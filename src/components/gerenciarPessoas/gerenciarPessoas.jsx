@@ -15,7 +15,7 @@ const GerenciarPessoas = () => {
 
   return (
 
-<Box component="main" sx={{ padding: 1, marginLeft: 5 }}>
+<Box component="main" sx={{ padding: 1, marginLeft: 0 }}>
 
 <Tabela />
 

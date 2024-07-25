@@ -39,8 +39,10 @@ const HomeNavegation = () => {
           paddingY: 3,
           backgroundColor: "#FFF",
           borderRadius: "40px",
-          width: "85vw",
-          height: "70vh",
+          width: "auto",
+          height: "auto",
+          minWidth: "60vw",
+          minHeight: "50vh",
           display: "flex",
         }}
       >
@@ -56,7 +58,7 @@ const HomeNavegation = () => {
             },
           }}
         >
-           <List>
+           <List sx={{marginTop: 10}}>
             <ListItem button onClick={() => handleItemClick('gerenciarTarefas')}>
               <AppsIcon sx={{ margin: 1 }} /> <ListItemText primary="Gerenciar tarefas" />
             </ListItem>
