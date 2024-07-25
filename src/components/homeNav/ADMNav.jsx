@@ -8,6 +8,7 @@ import AddIcon from '@mui/icons-material/Add';
 import Fab from '@mui/material/Fab';
 import Typography from '@mui/material/Typography';
 import GerenciarTarefas from "../gerenciarTarefas/gerenciarTarefas.jsx";
+import GerenciarPessoas from "../gerenciarPessoas/gerenciarPessoas.jsx";
 
 const HomeNavegation = () => {
   const [selectedComponent, setSelectedComponent] = useState(null);
@@ -59,7 +60,7 @@ const HomeNavegation = () => {
             <ListItem button onClick={() => handleItemClick('gerenciarTarefas')}>
               <AppsIcon sx={{ margin: 1 }} /> <ListItemText primary="Gerenciar tarefas" />
             </ListItem>
-            <ListItem button onClick={() => handleItemClick('pessoas')}>
+            <ListItem button onClick={() => handleItemClick('GerenciarPessoas')}>
               <PermIdentityIcon sx={{ margin: 1 }} /> <ListItemText primary="Pessoas" />
             </ListItem>
             <ListItem button onClick={() => handleItemClick('eventos')}>
@@ -72,8 +73,10 @@ const HomeNavegation = () => {
         </Drawer>
 
         <Box component="main">
-          {selectedComponent === 'gerenciarTarefas' && <GerenciarTarefas />}
 
+          {selectedComponent === 'gerenciarTarefas' && <GerenciarTarefas />}
+          {selectedComponent === 'GerenciarPessoas' && <GerenciarPessoas />}
+          
         </Box>
 
       </Paper>
