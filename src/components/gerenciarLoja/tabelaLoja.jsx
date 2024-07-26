@@ -90,30 +90,25 @@ export default function App() {
     <Box sx={{ position: "relative", top: -20 }}>
       <Box
         style={{
-          display: "flex",
-          flexDirection: "row",
-          alignItems: "center",
-          justifyContent: "center",
-          gap: "40px",
+          padding: 10,
+          marginLeft: 35,
+          marginBottom: 20,
+
         }}
       >
         <Typography sx={{ fontSize: 12 }}>
           <strong>Gerenciador de produtos</strong>
         </Typography>
-        <TextField
-          label="Buscar..."
-          variant="outlined"
-          value={searchTerm}
-          onChange={handleSearch}
-          fullWidth
-          style={{
-            maxWidth: "40vw",
-            maxHeight: "8vh",
-            marginBottom: "20px",
-            marginTop: "20px",
-          }}
-        />
-      </Box>
+
+      </Box> 
+
+      <Button contained sx={{ borderRadius: "10px", backgroundColor: "#B6B6B6", marginLeft: 5, color: "#FFFFFF", fontSize: "10px" }}>
+      + Adicionar produto
+    </Button>
+
+    <Button contained sx={{ borderRadius: "10px", backgroundColor: "#808080", marginLeft: 1, color: "#FFFFFF", fontSize: "10px" }}>
+      Gerenciar resgates
+    </Button>
 
       <TableContainer
         style={{ maxHeight: "50vh", overflow: "auto", overflowX: "auto" }}
@@ -129,7 +124,7 @@ export default function App() {
               <TableCell align="center">QUANTIDADE</TableCell>
               <TableCell align="center">VALOR</TableCell>
               <TableCell align="center"></TableCell>
-              <TableCell align="center"></TableCell>
+
             </TableRow>
           </TableHead>
           <TableBody>
@@ -155,7 +150,7 @@ export default function App() {
                   <TableCell align="center">{row.QUANTIDADE}</TableCell>
                   <TableCell align="center">{row.VALOR}</TableCell>
                   <TableCell align="center">{row.OPTIONS}</TableCell>
-                  <TableCell align="center">{row.BUY}</TableCell>
+
                 </TableRow>
               ))}
           </TableBody>
