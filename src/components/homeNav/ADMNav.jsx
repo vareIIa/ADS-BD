@@ -9,6 +9,8 @@ import Fab from '@mui/material/Fab';
 import Typography from '@mui/material/Typography';
 import GerenciarTarefas from "../gerenciarTarefas/gerenciarTarefas.jsx";
 import GerenciarPessoas from "../gerenciarPessoas/gerenciarPessoas.jsx";
+import GerenciarLoja from "../gerenciarLoja/gerenciarLoja.jsx";
+
 
 const HomeNavegation = () => {
   const [selectedComponent, setSelectedComponent] = useState(null);
@@ -68,7 +70,7 @@ const HomeNavegation = () => {
             <ListItem button onClick={() => handleItemClick('eventos')}>
               <CalendarMonthIcon sx={{ margin: 1 }} /> <ListItemText primary="Eventos" />
             </ListItem>
-            <ListItem button onClick={() => handleItemClick('lojaDePremios')}>
+            <ListItem button onClick={() => handleItemClick('GerenciarLoja')}>
               <StorefrontIcon sx={{ margin: 1 }} /><ListItemText primary="Loja de prêmios" />
             </ListItem>
           </List>
@@ -78,7 +80,8 @@ const HomeNavegation = () => {
 
           {selectedComponent === 'gerenciarTarefas' && <GerenciarTarefas />}
           {selectedComponent === 'GerenciarPessoas' && <GerenciarPessoas />}
-          
+          {selectedComponent === 'GerenciarLoja' && <GerenciarLoja />}
+
         </Box>
 
       </Paper>
