@@ -46,26 +46,25 @@ export default function App() {
   return (
   
     <Box sx={{position: 'relative', top: -20}}>
-    <Paper elevation={5} sx={{maxWidth: 'auto', marginBottom: 5, maxHeight: '15vh'}}>
-      <Box style={{
+     <Box style={{
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
-        
+        justifyContent: 'center',
         gap: '40px',
         
       }}>
-        <Typography sx={{marginLeft: 3, fontSize: 13}}><strong>Lista de Usuários</strong></Typography>
+        <Typography sx={{fontSize: 12}}><strong>Lista de Usuários</strong></Typography>
         <TextField
           label="Buscar..."
           variant="outlined"
           value={searchTerm}
           onChange={handleSearch}
           fullWidth
-          style={{ maxWidth: '80%', maxHeight: '8vh', marginBottom: '20px', marginTop: '20px' }}
+          style={{ maxWidth: '40vw', maxHeight: '8vh', marginBottom: '20px', marginTop: '20px' }}
         />
       </Box>
-      </Paper>
+
 
 
       <TableContainer style={{ maxHeight: '50vh', overflow: 'auto', overflowX: 'auto' }}>
@@ -77,6 +76,7 @@ export default function App() {
               <TableCell align="center">Data de Nascimento</TableCell>
               <TableCell align="center">Data de Inicio</TableCell>
               <TableCell align="center">Skills</TableCell>
+              <TableCell align="center"></TableCell>
 
 
             </TableRow>
